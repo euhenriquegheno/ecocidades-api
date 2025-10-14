@@ -9,6 +9,7 @@ RUN ./mvnw clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
+ENV PROFILE=prd
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dspring.profile.actives=${PROFILE}", "-jar", "app.jar"]
 
