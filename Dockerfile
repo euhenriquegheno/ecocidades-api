@@ -11,5 +11,5 @@ WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 ENV PROFILE=prd
 EXPOSE 8080
-ENTRYPOINT ["java", "-Dspring.profile.actives=${PROFILE}", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.actives=${PROFILE}", "-jar", "app.jar"]
 
