@@ -1,4 +1,4 @@
-name: Continuous Integration ECOCIDADES API
+name: Continuous Integration ECOCIDADES-API
 on:
     pull_request:
         branches:
