@@ -80,7 +80,16 @@ ENTRYPOINT ["java", "-Dspring.profiles.active=${PROFILE}", "-jar", "app.jar"]
 
 ## Prints do funcionamento
 
+Azure
 ![Azure](https://github.com/euhenriquegheno/ecocidades-api/blob/develop/prints/azure.png)
+
+Docker
+![Docker](https://github.com/euhenriquegheno/ecocidades-api/blob/develop/prints/docker.png)
+
+Swagger
+![Swagger](https://github.com/euhenriquegheno/ecocidades-api/blob/develop/prints/swagger.png)
+
+https://ecocidades-api-aqh2hkhgb6cjbwa8.canadacentral-01.azurewebsites.net/swagger-ui/index.html#/
 
 ## Tecnologias utilizadas
 
