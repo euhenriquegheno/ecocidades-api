@@ -80,7 +80,7 @@ ENTRYPOINT ["java", "-Dspring.profiles.active=${PROFILE}", "-jar", "app.jar"]
 
 ## Prints do funcionamento
 
-*(Nenhum print foi fornecido. Esta seção deve ser preenchida com evidências visuais da execução local, do pipeline CI/CD rodando no GitHub Actions, e do deploy em ambientes de staging e produção. Exemplos de evidências podem incluir screenshots da interface do Swagger UI, logs de execução do Docker, ou dashboards de monitoramento do Azure.)*
+![Azure](https://github.com/euhenriquegheno/ecocidades-api/blob/develop/prints/azure.png)
 
 ## Tecnologias utilizadas
 
