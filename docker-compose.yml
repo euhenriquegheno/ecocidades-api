@@ -1,32 +1,9 @@
-version: '3.8'
-
+version: "3.9"
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: mysql-db
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ecocidades
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-  ecocidades-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  api:
+    build: .
     container_name: ecocidades-api
     ports:
       - "8080:8080"
-    depends_on:
-      - mysql
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db-ecocidades-api-dev.mysql.database.azure.com:3306/ecocidades?createDatabaseIfNotExist=true
-      - SPRING_DATASOURCE_USERNAME=fiap
-      - SPRING_DATASOURCE_PASSWORD=1q2w3e4R
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-
-volumes:
-  mysql_data:
-
+      - PROFILE=dev  # profile dev vai usar H2

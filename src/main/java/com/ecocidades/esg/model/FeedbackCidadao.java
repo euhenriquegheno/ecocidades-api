@@ -8,14 +8,19 @@ import java.util.Date;
 @Table(name = "feedback_cidadao")
 @Data
 public class FeedbackCidadao {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String autor;
-    private String tipo;
-    @Column(columnDefinition = "TEXT")
-    private String descricao;
-    private Date data;
-    private String status;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String autor;
+  private String tipo;
+  @Column(columnDefinition = "TEXT")
+  private String descricao;
+  private Date data;
+  private String status;
+
+  public FeedbackCidadao(String autor, String tipo, String descricao) {
+    //TODO Auto-generated constructor stub
+  }
+    
 }
 

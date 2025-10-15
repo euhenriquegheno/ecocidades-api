@@ -1,15 +1,23 @@
-FROM openjdk:17-jdk-slim as builder
-WORKDIR /app
-COPY mvnw ./
-COPY .mvn .mvn
-COPY pom.xml ./
-COPY src ./src
-RUN ./mvnw clean package -DskipTests
+FROM maven:3.9.8-eclipse-temurin-21 AS build
 
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
+RUN mkdir /opt/app
+
+COPY . /opt/app
+
+WORKDIR /opt/app
+
+RUN mvn clean package
+
+FROM eclipse-temurin:21-jdk-alpine
+
+RUN mkdir /opt/app
+
+COPY --from=build  /opt/app/target/app.jar /opt/app/app.jar
+
+WORKDIR /opt/app
+
 ENV PROFILE=prd
-EXPOSE 8080
-ENTRYPOINT ["java", "-Dspring.profiles.actives=${PROFILE}", "-jar", "app.jar"]
 
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-Dspring.profiles.active=${PROFILE}", "-jar", "app.jar"]
