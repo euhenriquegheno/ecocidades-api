@@ -48,4 +48,4 @@ jobs:
               app-name: 'ecocidades-api'
               slot-name: 'production'
               publish-profile: ${{ secrets.AZURE_PROFILE }}
-              images: 'index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/ecocidades_api:${{ github.sha }}'
+              images: 'index.docker.io/${{ secrets.DOCKERHUB_USERNAME }}/ecocidades-api:${{ github.sha }}'
