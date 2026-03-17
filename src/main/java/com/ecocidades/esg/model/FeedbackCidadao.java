@@ -16,7 +16,8 @@ public class FeedbackCidadao {
   @Column(columnDefinition = "TEXT")
   private String descricao;
   private Date data;
-  private String status;
+  @Enumerated(EnumType.STRING)
+  private StatusFeedbackCidadao status;
 
   public FeedbackCidadao(String autor, String tipo, String descricao) {
     //TODO Auto-generated constructor stub
